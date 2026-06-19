@@ -22,7 +22,7 @@ Millions of shoppers on platforms like Meesho are misled by inflated ratings and
 
 | | URL |
 |---|---|
-| Frontend | `https://sachai.vercel.app` *(update after deploy)* |
+| Frontend | https://meesho-sach-ai.vercel.app |
 | Backend health-check | `https://sachai-api.onrender.com/api/health` *(update after deploy)* |
 
 > The Render free tier spins down after inactivity — first request may take ~30 s.
