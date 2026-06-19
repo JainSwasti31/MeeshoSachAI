@@ -164,9 +164,18 @@ input, textarea, select { font-family: inherit; font-size: 1rem; }
   border-radius: var(--radius);
   height: fit-content;
   position: sticky;
-  top: 76px; /* navbar height + 16px gap */
+  top: 76px;
   overflow-y: auto;
   max-height: calc(100vh - 92px);
+  /* Desktop toggle — hidden when closed */
+  transition: width 0.25s ease, opacity 0.2s ease;
+}
+.sidebar--hidden {
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  border: none;
+  pointer-events: none;
 }
 
 .sidebar-overlay { display: none; }
@@ -311,12 +320,13 @@ input, textarea, select { font-family: inherit; font-size: 1rem; }
 }
 
 .filter-toggle-btn {
-  display: none; /* shown on mobile */
   flex-shrink: 0;
   position: relative;
   gap: 0.4rem;
+  display: inline-flex; /* visible on all screen sizes */
 }
 .filter-toggle-btn svg { width: 16px; height: 16px; }
+.filter-toggle-btn--active { background: var(--color-surface-2); }
 
 .filter-badge {
   display: inline-flex;
@@ -332,6 +342,44 @@ input, textarea, select { font-family: inherit; font-size: 1rem; }
   position: absolute;
   top: -6px;
   right: -6px;
+}
+
+/* ── Filter chips ────────────────────────────────────────────────────────────── */
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.7rem;
+  background: var(--color-surface-2);
+  border: 1.5px solid var(--color-primary-light);
+  border-radius: 999px;
+  color: var(--color-primary-dark);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.filter-chip svg { width: 12px; height: 12px; }
+.filter-chip:hover {
+  background: #ede9fe;
+  border-color: var(--color-primary);
+}
+.filter-chip--clear {
+  background: transparent;
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+}
+.filter-chip--clear:hover {
+  background: #fef2f2;
+  border-color: var(--color-negative);
+  color: var(--color-negative);
 }
 
 .home-layout {
@@ -645,7 +693,7 @@ html, body {
   .sidebar-close { display: flex; }
 
   /* Toolbar */
-  .filter-toggle-btn { display: inline-flex; }
+  /* filter-toggle-btn is always visible — no override needed */
 
   /* Product grid: single column (Req 4.2) */
   .product-grid, .loading-grid { grid-template-columns: 1fr; }

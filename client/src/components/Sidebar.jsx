@@ -56,7 +56,7 @@ export default function Sidebar({ filters, onFilterChange, open, onClose }) {
         />
       )}
 
-      <aside className={`sidebar${open ? " sidebar--open" : ""}`} aria-label="Filters">
+      <aside className={`sidebar${open ? " sidebar--open" : " sidebar--hidden"}`} aria-label="Filters">
         {/* Header */}
         <div className="sidebar-header">
           <span className="sidebar-title">
