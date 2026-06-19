@@ -32,13 +32,13 @@ Millions of shoppers on platforms like Meesho are misled by inflated ratings and
 ## Screenshots
 
 ### Homepage — Product Grid with Sidebar Filters
-![SachAI homepage showing the product grid with sidebar category and sort filters](docs/screenshots/homepage.png)
+![SachAI homepage showing the product grid with sidebar category filters and search bar](docs/screenshots/homepage.png)
 
-### Product Detail — Trust Score Breakdown
-![Product detail page with Trust Score badge, sentiment breakdown, and mismatch analysis](docs/screenshots/product-detail.png)
+### Product Detail — Trust Score Badge
+![Product detail page for Latest Women Heel showing Trust Grade D (49), price ₹358, and Re-analyze Trust button](docs/screenshots/product-detail.png)
 
-### Trust Badge — Grade Examples
-![TrustBadge component showing grades from A+ to F](docs/screenshots/trust-badge.png)
+### Trust Score Breakdown
+![Trust Score Breakdown showing Sentiment 10/40, Rating Quality 24/30, Description Match 15/30 with detected mismatches](docs/screenshots/trust-breakdown.png)
 
 ---
 
